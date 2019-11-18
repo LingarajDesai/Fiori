@@ -1,0 +1,24 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="Z_PURCHASE_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="orderheader" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/></Key><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc."
+					sap:sortable="false"/><Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Company Code" sap:sortable="false"/><Property Name="Bstyp" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Doc. Category" sap:sortable="false"/><Property Name="Bsart" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Document Type" sap:sortable="false"/><Property Name="Ekgrp" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Purch. Group" sap:sortable="false"/><NavigationProperty Name="orderitem" Relationship="Z_PURCHASE_SRV.zass" FromRole="FromRole_zass" ToRole="ToRole_zass"/></EntityType>
+			<EntityType Name="orderitem" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/><PropertyRef Name="Ebelp"/></Key><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc."
+					sap:sortable="false"/><Property Name="Ebelp" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Item" sap:sortable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:sortable="false"/><Property Name="Ematn" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:sortable="false"/><Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Company Code" sap:sortable="false"/><Property Name="Matkl" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Material Group" sap:sortable="false"/><NavigationProperty Name="orderheaderSet" Relationship="Z_PURCHASE_SRV.zass" FromRole="ToRole_zass" ToRole="FromRole_zass"/></EntityType>
+			<Association Name="zass" sap:content-version="1"><End Type="Z_PURCHASE_SRV.orderheader" Multiplicity="*" Role="FromRole_zass"/><End Type="Z_PURCHASE_SRV.orderitem" Multiplicity="1" Role="ToRole_zass"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_zass"><PropertyRef Name="Ebeln"/></Principal>
+					<Dependent Role="ToRole_zass"><PropertyRef Name="Ebeln"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="Z_PURCHASE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="orderheaderSet" EntityType="Z_PURCHASE_SRV.orderheader" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="orderitemSet" EntityType="Z_PURCHASE_SRV.orderitem" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="zassSet" Association="Z_PURCHASE_SRV.zass" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:content-version="1"><End EntitySet="orderheaderSet" Role="FromRole_zass"/><End EntitySet="orderitemSet" Role="ToRole_zass"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/Z_PURCHASE_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/Z_PURCHASE_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
