@@ -19,7 +19,7 @@
 					</OverflowToolbar>
 				</headerToolbar>
 				<items>
-					<ObjectListItem type="Navigation" press=".onSelectionChange" title="PO:{Ebeln}" number="{Bsart}">
+					<ObjectListItem id="id11"type="Navigation" press=".onSelectionChange" title="PO:{Ebeln}" number="{Bsart}">
 					</ObjectListItem>
 				</items>
 			</List>

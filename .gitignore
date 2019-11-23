@@ -12,6 +12,12 @@ changes_preview.js
 AppVariant_index.html
 AppVariantPreviewPayload.zip
 mergedManifestDescriptor.json
+<<<<<<< HEAD
 APIExternalProducer.js
 .*/APIExternalProducer.js
 /mta_archives/
+=======
+/mta_archives/
+APIExternalProducer.js
+.*/APIExternalProducer.js
+>>>>>>> refs/heads/master
