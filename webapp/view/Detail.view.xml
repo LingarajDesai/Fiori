@@ -1,8 +1,8 @@
 <mvc:View xmlns="sap.m" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:mvc="sap.ui.core.mvc" controllerName="master.zmaster_page.controller.Detail"><semantic:SemanticPage id="detailPage" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
 		<semantic:titleHeading>
-			<Title text="PO:{Ebeln}&#10;Item:{Ebelp}" level="H2" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" cd:w5g.dt.context="/orderitemSet"/>
+			<Title id="id12" text="PO:{Ebeln}&#10;Item:{Ebelp}" level="H2" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" cd:w5g.dt.context="/orderitemSet"/>
 		</semantic:titleHeading>
-		<semantic:headerContent><ObjectAttribute/>
+		<semantic:headerContent>id="id13"</ObjectAttribute>
 
 		</semantic:headerContent>
 		<!--Semantic ShareMenu Buttons-->

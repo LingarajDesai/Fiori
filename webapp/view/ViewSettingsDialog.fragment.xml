@@ -6,7 +6,7 @@
 		id="viewSettingsDialog"
 		confirm=".onConfirmViewSettingsDialog">
 		<sortItems>
-			<ViewSettingsItem
+			<ViewSettingsItem id="id14"
 				text="{i18n>masterSort1}"
 				key="Bsart"
 				selected="true"/>
